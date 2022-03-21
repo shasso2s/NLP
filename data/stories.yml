@@ -1,0 +1,29 @@
+version: "3.0"
+
+stories:
+
+- story: deny story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: add_data
+  - Form_Info
+  - Form{"name":"Form_Info"}
+  - Form{"name":null} 
+  - intent: deny
+  - action: utter_goodbye
+
+- story: affirm story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: add_data
+  - form_info
+  - Form{"name":"form_info"}
+  - Form{"name":null} 
+  - intent: affirm
+  - action: utter_action_save_data
+
+
+
+
